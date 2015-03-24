@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/NorthConcepts-DataPipeline-2.3.3.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/antlr-2.7.5.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/freemarker-2.3.19.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/itext-2.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/jackson-all-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/jxl-2.6.12.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/poi-excelant-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/poi-ooxml-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/poi-ooxml-schemas-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/poi-scratchpad-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Integral_source_code/WorkSpaceMTLTrunc/MiscProjects/jar_local/NorthConcepts-DataPipeline-2.3.3/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

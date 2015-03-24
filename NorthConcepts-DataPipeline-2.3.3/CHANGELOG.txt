@@ -1,0 +1,203 @@
+2.3.3 - Oct 1, 2013
+- Added XmlReader.setExpandDuplicateFields(boolean) to return multiple records instead of overwriting repeating fields
+
+2.3.2.1 - Sep 30, 2013
+- Increased records in Free version 
+
+2.3.2 - Sep 24, 2013
+- added Record.selectFields(FieldList, boolean) and IncludeFields.lenient to continue even if fields don't exist
+- SetCalculatedField & SetField now have overwrite flags to prevent changing existing values
+
+
+2.3.1 - Sep 13, 2013
+- Added generic JDBC upsert writer: JdbcUpsertWriter
+- Added PipedReader and PipedWriter to allow the push model of piping a writer to a reader
+- Added convenience Record.setField(String fieldName, Object value) and Record.setFieldNull(String fieldName, FieldType type) methods.
+- JsonReader XPath matching and exception reporting improvements
+- Early access to SQL builder classes
+
+
+2.3 - Aug 2, 2013
+- added streaming JSON reading and writing (simple and template based)
+- added SimpleXmlWriter
+- improved handling of recursive XML-to-records 
+- added user-definable demux strategies
+- DeMuxReader is no longer a public class since it should not be referenced directly
+- improved exception handling in JdbcReader
+- BUGFIX: JavaBeanReader now handles xpath for recursive text children
+- updated Apache POI to v3.9
+
+
+2.2.9.3 - July 8, 2013
+- updated licenses (change to number of developers and applications in each tier)
+- IncludeFields & ExcludeFields now accept a collection of field names in their constructor and add method
+
+
+2.2.9.2 - June 7, 2013
+- updated distributed Eclipse project to include new Data Pipeline jar
+
+
+2.2.9.1 - May 13, 2013
+- added JdbcReader.useColumnLabel property to allow fields to be named using the column labels (or aliases) instead of the underlying, real column names
+
+
+2.2.9 - May 6, 2013
+- added Excel 2007 provider (POI_XSSF)
+- Excel handling now defaults to the Apache POI_XSSF (Excel 2007) provider, instead of POI (Excel 2003)
+- added FixedWidthField.align to allow left-filled (right aligned) fields
+- added FixedWidthField.fillChar to allow fields to specify a different filler from their reader/writer
+- reduced memory overhead for fields and records
+- CSV performance improvements
+- exception property values now truncated to 256 chars
+- using StringBuilder (instead of StringBuffer) internally to improve performance
+
+
+2.2.8 - Nov 28, 2012
+- added TemplateWriter for writing text streams using FreeMarker templates
+- added new examples for writing XML and HTML files using TemplateWriter
+- BUGFIX: XmlWriter's (XmlTemplate, File) constructor now calls setFieldNamesInFirstRow(false) by default
+- BUGFIX: The JxlProvider now converts intervals and user-defined types to string when generating Excel files
+- Intervals are no longer converted to strings when added to a field/record
+- BasicFieldTransformer can now convert numbers to intervals (seconds, months, days, minutes, etc.)
+- JdbcWriter now has public accessors for connection, tableName, batchMode, and jdbcTypes
+- individual fields can now be removed from a FieldList
+- FieldList can now accept collections of strings
+- updated Apache POI to v3.8
+
+
+2.2.7 - July 14, 2012
+- added JdbcMultiWriter for multi-threaded writing to 1 or more database connections
+- added multi-threaded AsyncWriter to compliment AsyncReader
+- data writers now have an available() method to indicate the number of records that can probably be written without blocking
+- MultiWriter now supports configurable write strategies (ReplicateWriteStrategy, RoundRobinWriteStrategy, AvailableCapacityWriteStrategy, and user defined)
+- added support for CLOB fields (see JdbcValueReader.DEFAULT)
+- Field and Record's toString() methods now limit displayed strings to the first 128 characters
+- RecordMeter is now public and returned by MeteredReader and MeteredWriter's getMeter() method
+- BUGFIX: record count is no longer off by 1 in some cases 
+
+
+2.2.6.1 - May 3, 2012
+- BUGFIX: POI provider now handles null rows in Excel file
+- BUGFIX: Excel reader exception logging no longer fails when a record has no fields
+
+
+2.2.6 - April 22, 2012
+- performance improvements in CSV and fixed width handling
+- untyped expression evaluation is now based on the value's type, instead of the field's declared type
+- BUGFIX: now handles untyped expressions between primitive and object values
+- float expressions are now upgraded to doubles during evaluation
+- all non doubles and floats numbers are now upgraded to longs during evaluation
+- expressions can now reference Java beans, not just primitive values
+- method call expression now finds the most appropriate method based on the runtime argument types (http://en.wikipedia.org/wiki/Multiple_dispatch)
+- improved handling for collections and arrays in DataException properties
+- Apache PoiProvider can now distinguish between date, time, and datetimes fields in Excel 
+
+
+2.2.5 - Jan 8, 2012
+- added JavaBeanReader whice uses XPath expressions to identify field values and break records
+- AbstractReader's setStartingRow and setLastRow no return this
+- Filter rule IsInstanceOfJavaType now returns false for null values
+- added number-to-date methods to BasicFieldTransformer (numberToDate(), minutesToDate(), hoursToDate(), and daysToDate())
+- BasicFieldTransformer.Operation and BasicFieldTransformer.StringOperation are now public classes
+- BasicFieldTransformer.add(Operation ... operation) is now public
+- ConditionalTransformer is now private (use TransformingReader.filter instead)
+- TransformingReader now contains an optional Filter, allowing any transformer to be conditionally applied
+- Removed TransformingReader.add(Filter filter, Transformer ... transformer) method
+
+
+2.2.4 - May 31, 2011
+- POI provider for ExcelWriter now caches cell styles.  This fixes the "Too many different cell formats" Excel message when opening a spreadsheet with more than 4000 styles
+
+
+2.2.3 - May 14, 2011
+- added JdbcValueReader to allow clients to override column reading strategy
+- JdbcReader.valueReader property
+
+
+2.2.2 - May 11, 2011
+- added XmlTemplate
+- XmlWriter now uses XmlTemplate to describe output pattern
+
+
+2.2.1 - December 9, 2010
+- added batch execution to JdbcWriter (see JdbcWriter.setBatchSize)
+- added callback mechanism to track job progress (see JobTemplate.transfer(R reader, W writer, boolean async, JobCallback<R, W> callback))
+- early access to DeMuxReader
+
+
+2.2.0 - September 9, 2010
+- Added XPath-based XmlReader
+- Excel now defaults to the Apache POI instead of JXL
+- The following classes now use java.util.List instead of java.util.ArrayList in their public APIs: CompositeValue, FieldList, Lookup, LookupTransformer, Record, RecordList
+
+
+2.1.0 - August 26, 2010
+- Added support for Excel 2003 XLS files
+- Added support for Excel XLSX (XML format) files
+- BUGFIX: whitespace (like tab) can now be used as the field separator in CSVReader
+- Added FixedWidthReader.setLastFieldConsumesRemaining(boolean lastFieldConsumesRemaining)   
+- Added ExcelReader.setUseSheetColumnCount(boolean useSheetColumnCount)
+- BUGFIX: handle null variable names in expressions
+- Added more string utils to BasicFieldTransformer
+- Added ConditionalTransformer class
+- Added TransformingReader.add(Filter filter, Transformer ... transformer)
+- SetField now has type-specific constructors
+- Added Eclipse project files
+- Added Ant build project
+
+
+2.0.2 - Jan 18, 2009
+- RecordList now has a varargs constructor
+- BUGFIX: Lookup now has a get(Arraylist) method; was previously passing Arraylist to get(Object...)
+- BUGFIX: XmlWriter no longer treats the field names as the first record
+- Examples now include input files
+
+
+2.0.1 - Jan 9, 2009
+- BUGFIX: ValueMatch.add(Object ... values) now adds individual elements of values
+- ValueMatch is now a parameterized type
+- OrRule, PatternMatch now use varargs
+
+	
+2.0.0 - Oct 26, 2008
+- Java 5 support (var-args, generics, enums)
+- Dual licensing:  GPL and commercial
+- Added CSVReader.trimFields property (default is true)
+- Added workaround for the JXL (Excel provider) timezone issue
+
+
+1.2.3
+- Added ASTNode, ExpressionHelper, and ParseException to the public API
+- Expression now extends ASTNode
+- Added RtfWriter
+- Added PdfWriter
+- Added XmlWriter
+- Added CombinedLogReader
+- Added BinaryWriter
+- added SequenceReader 
+
+
+1.2.2
+- RecordComparator now compares all fields when none are specified
+- LookupTransformer now handles "no results" and "too many results" through overridable methods
+- Added session properties to record and field
+- Renamed ProxyWriter.setTargetDataSink to setNestedDataWriter
+- Renamed ProxyReader.setTargetDataReader to setNestedDataReader
+- ParsingReader now accepts a file parameter
+- Interval now implements Comparable
+- Moment now implements Comparable and accepts a Date
+- FixedWithdWriter now extends LinedTextWriter (instead of TextWriter)
+- CSVWriter now extends LinedTextWriter (instead of TextWriter)
+- Added FieldFilterRule.toString()
+
+
+1.2.1
+- Added fixed width reader & writer
+
+
+1.2.0
+- JdbcReader & JdbcWriter shows current record on exception
+- AbstractWriter now shows current record (instead of null) on exception
+- ProxyReader respects the Record.isDeleted() flag when testing for record removal from ProxyReader.interceptRecord
+- DataReader.read() now checks for records pushed into the buffer just before EOF
+
